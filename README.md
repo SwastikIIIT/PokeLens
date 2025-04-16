@@ -7,6 +7,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
+
+
 ## 🔍 Overview
 
 PokéLens is a modern, lightning-fast Pokémon encyclopedia built with React and Vite. Discover detailed information about your favorite Pokémon with our intuitive interface and comprehensive database.
