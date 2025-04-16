@@ -49,7 +49,7 @@ const PokemonCard = ({ pokemon }) => {
       initial="hidden"
       animate="visible"
       whileHover="hover"
-     className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+      className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
       <div className={`h-1 w-full ${getTypeColor(pokemon.types[0]?.type.name)}`}></div>
       
       <div className="bg-gray-100 p-4 flex justify-center">
@@ -79,8 +79,7 @@ const PokemonCard = ({ pokemon }) => {
         </div>
         
         <div className="mb-4 pb-3 border-b border-gray-100">
-          <p className="text-gray-600 text-sm font-medium mb-1">Abilities</p>
-          <p className="text-sm">{abilities}</p>
+          <p className="mb-1"><span className='text-gray-600  text-md  font-medium'>Abilities:</span> <span className="text-md italic text-gray-700">{abilities}</span></p>
         </div>
         
         <div className="flex justify-between items-center px-2">
