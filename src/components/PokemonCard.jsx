@@ -1,6 +1,42 @@
 import React from 'react';
 import getTypeColor from '../color';
+/* eslint-disable no-unused-vars */
+import { motion } from "framer-motion";
+/* eslint-enable no-unused-vars */
 
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    },
+    hover: { 
+      y: -10,
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      transition: { 
+        type: "spring", 
+        stiffness: 300, 
+        damping: 15 
+      }
+    }
+  };
+  
+
+  const imageVariants = {
+    hover: { 
+      scale: 1.05,
+      y: -5,
+      transition: { 
+        type: "spring", 
+        stiffness: 300, 
+        damping: 10 
+      }
+    }
+  };
 
 const PokemonCard = ({ pokemon }) => {
   const abilities=pokemon.abilities.map(item=>{
@@ -9,11 +45,16 @@ const PokemonCard = ({ pokemon }) => {
     }).join(",")
   
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+    <motion.div variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
+     className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
       <div className={`h-1 w-full ${getTypeColor(pokemon.types[0]?.type.name)}`}></div>
       
       <div className="bg-gray-100 p-4 flex justify-center">
-        <img 
+        <motion.img
+          variants={imageVariants} 
           src={pokemon.sprites.other['official-artwork'].front_default} 
           alt={pokemon.name}
           className="h-48 w-48 object-contain"
@@ -58,7 +99,7 @@ const PokemonCard = ({ pokemon }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
