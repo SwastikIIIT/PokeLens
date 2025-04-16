@@ -9,7 +9,7 @@ const getTypeColor=(type) => {
       fighting: 'bg-red-700 text-white',
       poison: 'bg-purple-500 text-white',
       ground: 'bg-yellow-600 text-white',
-      flying: 'bg-indigo-700',
+      flying: 'bg-indigo-700 text-white',
       bug: 'bg-green-400',
       rock: 'bg-yellow-700 text-white',
       ghost: 'bg-purple-700 text-white',
