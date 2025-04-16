@@ -107,7 +107,7 @@ const PokeDetail = () => {
                  variants={imageVariants}
                  whileHover="hover"
                  whileTap="hover"
-                src={pokemon.sprites.other['official-artwork'].front_default} 
+                src={pokemon.sprites.other['dream_world'].front_default} 
                 alt={pokemon.name}
                 className="w-64 h-64 object-contain mx-auto"
               />
